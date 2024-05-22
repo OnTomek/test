@@ -13,8 +13,8 @@ def get_branch_name_from_pull_request(pull_request_number):
         print("GitHub token not found. Please set the GITHUB_TOKEN environment variable.")
         return None
     
-    repo_owner = "OnTomek"  # Replace with the owner of the repository
-    repo_name = "test"  # Replace with the name of the repository
+    repo_owner = "OnTomek"
+    repo_name = "test"
 
     headers = {
         "Authorization": f"token {github_token}",
