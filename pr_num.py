@@ -3,7 +3,7 @@ import sys
 import requests
 
 def create_deployment_folder(branch_name):
-    folder_path = f"C:/temp/deployment_folder_path/{branch_name}"
+    folder_path = f"C:/temp/deployment_package/{branch_name}"
     os.makedirs(folder_path, exist_ok=True)
     print(f"Created folder: {folder_path}")
 
