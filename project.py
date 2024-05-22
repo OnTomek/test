@@ -1,7 +1,7 @@
 import os
 import requests
 
-folder_path = 'C:/temp/depolyment package'
+folder_path = 'C:/temp/depolyment_package'
 
 # Function to get branch name from a pull request
 def get_branch_name_from_pr(owner, repo, pr_number, token):
@@ -29,11 +29,11 @@ def create_folder(branch_name):
         print('No branch name provided.')
 
 if __name__ == "__main__":
-    # Replace these with your repository details and token
+    # Repository details and token
     owner = 'OnTomek'
     repo = 'test'
-    pr_number = 1  # Replace with the actual pull request number
-    token = ';'
+    pr_number = 2
+    token = '' # Add token
 
     branch_name = get_branch_name_from_pr(owner, repo, pr_number, token)
     create_folder(branch_name)
