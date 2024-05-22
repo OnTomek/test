@@ -15,14 +15,14 @@ def main():
     repo_path = input("Enter the path to the local repository: ").strip()
     os.chdir(repo_path)
 
-    # Pull master branch
-    print("Pulling master branch...")
-    if run_command("git checkout master") != 0:
-        print("Failed to checkout master branch.")
+    # Pull main branch
+    print("Pulling main branch...")
+    if run_command("git checkout main") != 0:
+        print("Failed to checkout main branch.")
         return
 
-    if run_command("git pull origin master") != 0:
-        print("Failed to pull master branch.")
+    if run_command("git pull origin main") != 0:
+        print("Failed to pull main branch.")
         return
 
     # Pull another branch
