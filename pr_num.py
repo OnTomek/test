@@ -7,7 +7,8 @@ def create_deployment_folder(branch_name):
     os.makedirs(folder_path, exist_ok=True)
     print(f"Created folder: {folder_path}")
 
-def get_branch_name_from_pull_request(pull_request_number):
+# get branch name from pull request
+def get_branch_name(pull_request_number):
     github_token = os.getenv("GITHUB_TOKEN")
     if not github_token:
         print("GitHub token not found. Please set the GITHUB_TOKEN environment variable.")
@@ -38,7 +39,7 @@ def main():
         sys.exit(1)
 
     pull_request_number = sys.argv[1]
-    branch_name = get_branch_name_from_pull_request(pull_request_number)
+    branch_name = get_branch_name(pull_request_number)
     if branch_name:
         create_deployment_folder(branch_name)
     else:
