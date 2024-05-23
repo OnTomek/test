@@ -6,12 +6,15 @@
 
 ## Project Requirements
 
-- Here we need requests, git library to be installed.
+- For this part of code we need to install *requests* git library.
 ```python
 def merge_pull_request(pull_request_number):
     github_token = os.getenv("GITHUB_TOKEN")
 ```
 
+```
+pip install requests
+```
 - Update this with your GitHub username or organization name and repository name.
 ```python
 repo_owner = "OnTomek"
