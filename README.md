@@ -25,7 +25,7 @@ repo_name = "test"
 
 - Update this with the path to your local repository and the name of your main branch.
 ```python
-repo_path = "C:/temp/test"
+repo_path = "C:/your_local_path"
 main_branch = "main"
 ```
 
