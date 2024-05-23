@@ -19,11 +19,11 @@ pip install requests
 ```
 - Update this with your GitHub username or organization name and repository name.
 ```python
-repo_owner = "OnTomek"
-repo_name = "test"
+repo_owner = "Username"
+repo_name = "Repository"
 ```
 
-- Update this with the path to your local repository and the name of your main branch.
+- Update this with the path to your local repository and the name of your main/master branch.
 ```python
 repo_path = "C:/your_local_path"
 main_branch = "main"
