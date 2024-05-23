@@ -94,7 +94,7 @@ def get_branch_name(pull_request_number):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python final.py <pull_request_number>")
+        print("Usage: python github_merger.py <pull_request_number>")
         sys.exit(1)
 
     pull_request_number = sys.argv[1]
