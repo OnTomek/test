@@ -28,10 +28,14 @@ main_branch = "main"
 ```
 
 ## How to Use the tool
-- Example input - python github_merger.py <pr number>
+- Example input
+```
+PS C:\temp\test> python github_merger.py
+Usage: python github_merger.py <pull_request_number>
+PS C:\temp\test> python github_merger.py 10
+```
 - Example output
 ```
-PS C:\Users\Ondra\Desktop\test> python github_merger.py 10
 Created folder: C:/temp/deployment_package\main
 Created package file: C:/temp/deployment_package\main\main.package
 Pull request merged successfully on GitHub.
