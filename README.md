@@ -19,8 +19,8 @@ pip install requests
 ```
 - Update this with your GitHub username or organization name and repository name.
 ```python
-repo_owner = "Username"
-repo_name = "Repository"
+repo_owner = "your_username"
+repo_name = "your_repository_name"
 ```
 
 - Update this with the path to your local repository and the name of your main/master branch.
