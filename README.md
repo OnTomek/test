@@ -1,3 +1,5 @@
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
+
 # Pull Request Merger
 
 - This [script](github_merger.py) is for merging an additional branch and the master branch with the help of a pull request number and API.
