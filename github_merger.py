@@ -13,6 +13,7 @@ def create_deployment_folder(branch_name):
         print(f"Failed to create folder: {e}")
         return None
 
+"""
 def pull_and_merge(repo_path, main_branch, other_branch):
     try:
         repo = Repo(repo_path)
@@ -24,6 +25,7 @@ def pull_and_merge(repo_path, main_branch, other_branch):
         print(f"Pulled and merged changes from {other_branch} into {main_branch}")
     except Exception as e:
         print(f"Failed to pull and merge changes: {e}")
+"""
 
 def create_package_file(folder_path, branch_name):
     try:
@@ -103,7 +105,7 @@ def main():
             repo_path = "C:/temp/test"  # Path to your local repository
             main_branch = "main"        # Name of your main branch
             other_branch = branch_name
-            pull_and_merge(repo_path, main_branch, other_branch)
+            """pull_and_merge(repo_path, main_branch, other_branch)"""
             create_package_file(folder_path, branch_name)
             
             # Merge the pull request on GitHub
