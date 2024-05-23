@@ -100,8 +100,8 @@ def main():
     if branch_name:
         folder_path = create_deployment_folder(branch_name)
         if folder_path:
-            repo_path = "C:/temp/test"  # Update this with the path to your local repository
-            main_branch = "main"        # Update this with the name of your main branch
+            repo_path = "C:/temp/test"  # Path to your local repository
+            main_branch = "main"        # Name of your main branch
             other_branch = branch_name
             pull_and_merge(repo_path, main_branch, other_branch)
             create_package_file(folder_path, branch_name)
