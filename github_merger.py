@@ -6,8 +6,9 @@ from git import Repo
 def create_deployment_folder(branch_name):
     try:
         folder_path = os.path.join("C:/temp/deployment_package", branch_name.replace("/", "_"))
+        normalized_path = os.path.normpath(folder_path)
         os.makedirs(folder_path, exist_ok=True)
-        print(f"Created folder: {folder_path}")
+        print(f"Created folder: {normalized_path}")
         return folder_path
     except OSError as e:
         print(f"Failed to create folder: {e}")
@@ -30,9 +31,10 @@ def pull_and_merge(repo_path, main_branch, other_branch):
 def create_package_file(folder_path, branch_name):
     try:
         file_path = os.path.join(folder_path, f"{branch_name.replace('/', '_')}.package")
+        normalized_path = os.path.normpath(file_path)
         with open(file_path, 'w') as package_file:
             pass
-        print(f"Created package file: {file_path}")
+        print(f"Created package file: {normalized_path}")
     except OSError as e:
         print(f"Failed to create package file: {e}")
 
