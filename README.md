@@ -7,7 +7,7 @@
   Then in the folder it creates an empty .package file also with the desired branch name and last but not least it merges the two branches together on github.
 
 ## Project Requirements
-
+[requirements](requirements.txt)
 - For this part of code we need to install *requests* git library.
 ```python
 def merge_pull_request(pull_request_number):
