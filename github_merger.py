@@ -1,7 +1,7 @@
 import os
 import sys
 import requests
-"""from git import Repo"""
+from git import Repo
 
 def create_deployment_folder(branch_name):
     """Function creates folder on a constant path."""
@@ -16,7 +16,7 @@ def create_deployment_folder(branch_name):
         return None
 
 # Merges the pull request locally
-"""
+
 def pull_and_merge(repo_path, main_branch, other_branch):
     try:
         repo = Repo(repo_path)
@@ -28,7 +28,6 @@ def pull_and_merge(repo_path, main_branch, other_branch):
         print(f"Pulled and merged changes from {other_branch} into {main_branch}")
     except ImportError as e:
         print(f"Failed to pull and merge changes: {e}")
-"""
 
 def create_package_file(folder_path, branch_name):
     """Function creating package file."""
@@ -107,10 +106,10 @@ def main():
     if branch_name:
         folder_path = create_deployment_folder(branch_name)
         if folder_path:
-            """repo_path = "C:/temp/test"  # Path to your local repository
+            repo_path = "C:/temp/test"  # Path to your local repository
             main_branch = "main"        # Name of your main branch
             other_branch = branch_name
-            pull_and_merge(repo_path, main_branch, other_branch)"""
+            pull_and_merge(repo_path, main_branch, other_branch)
             create_package_file(folder_path, branch_name)
             merge_pull_request(pull_request_number)
         else:
