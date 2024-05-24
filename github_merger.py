@@ -48,7 +48,7 @@ def merge_pull_request(pull_request_number):
         return
 
     repo_owner = "OnTomek"  # Update this with your GitHub username or organization name
-    repo_name = "test"       # Update this with your repository name
+    repo_name = "test"      # Update this with your repository name
 
     url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/pulls/{pull_request_number}/merge"
 
@@ -77,7 +77,7 @@ def get_branch_name(pull_request_number):
         return None
 
     repo_owner = "OnTomek"  # Update this with your GitHub username or organization name
-    repo_name = "test"       # Update this with your repository name
+    repo_name = "test"      # Update this with your repository name
 
     headers = {
         "Authorization": f"token {github_token}",
