@@ -1,7 +1,28 @@
 import os
 import sys
 import requests
+import click
+from pathlib import Path
 from git import Repo
+
+REPO_OWNER = "OnTomek"
+REPO_NAME = "test"
+REPO_PATH = "C:/temp/test"
+MAIN_BRANCH = "main"
+
+@click.command()
+@click.option('--owner', type=str, required=True, help='A string prompt')
+@click.option('--repo', type=str, required=True, help='A string prompt')
+@click.option('--path', type=click.Path(exists=True, path_type=Path), required=True, help='')
+@click.option('--main', type=str, required=True, help='A string prompt')
+
+def validate_inputs(owner, repo, path, main):
+    """Validate and print the inputs."""
+    # Print the inputs
+    click.echo(f'Owner: {owner}')
+    click.echo(f'Repo: {repo}')
+    click.echo(f'Path: {path}')
+    click.echo(f'Main: {main}')
 
 def create_deployment_folder(branch_name):
     """Function creates folder on a constant path."""
@@ -77,15 +98,15 @@ def get_branch_name(pull_request_number):
         print("GitHub token not found. Please set the GITHUB_TOKEN environment variable.")
         return None
 
-    repo_owner = "OnTomek"  # Update this with your GitHub username or organization name
-    repo_name = "test"      # Update this with your repository name
+    """repo_owner = "OnTomek"  # Update this with your GitHub username or organization name
+    repo_name = "test"      # Update this with your repository name"""
 
     headers = {
         "Authorization": f"token {github_token}",
         "Accept": "application/vnd.github.v3+json"
     }
 
-    url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/pulls/{pull_request_number}"
+    url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/pulls/{pull_request_number}"
 
     try:
         response = requests.get(url, headers=headers, timeout=5)
@@ -107,10 +128,10 @@ def main():
     if branch_name:
         folder_path = create_deployment_folder(branch_name)
         if folder_path:
-            repo_path = "C:/temp/test"  # Path to your local repository
-            main_branch = "main"        # Name of your main branch
+            """repo_path = "C:/temp/test"  # Path to your local repository
+            main_branch = "main"        # Name of your main branch"""
             other_branch = branch_name
-            pull_and_merge(repo_path, main_branch, other_branch)
+            pull_and_merge(REPO_PATH, MAIN_BRANCH, other_branch)
             create_package_file(folder_path, branch_name)
             """merge_pull_request(pull_request_number)"""
         else:
@@ -120,3 +141,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # validate_input()
