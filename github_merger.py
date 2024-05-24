@@ -16,7 +16,6 @@ def create_deployment_folder(branch_name):
         return None
 
 # Merges the pull request locally
-
 def pull_and_merge(repo_path, main_branch, other_branch):
     try:
         repo = Repo(repo_path)
@@ -40,8 +39,9 @@ def create_package_file(folder_path, branch_name):
     except OSError as e:
         print(f"Failed to create package file: {e}")
 
+"""
 def merge_pull_request(pull_request_number):
-    """Function merges pull request via github token."""
+    # Function merges pull request via github token.
     github_token = os.getenv("GITHUB_TOKEN")
     if not github_token:
         print("GitHub token not found. Please set the GITHUB_TOKEN environment variable.")
@@ -68,6 +68,7 @@ def merge_pull_request(pull_request_number):
         print("Pull request merged successfully on GitHub.")
     else:
         print(f"Failed to merge pull request on GitHub. Status code: {response.status_code}")
+"""
 
 def get_branch_name(pull_request_number):
     """Function gets the branch name from pull request."""
@@ -111,7 +112,7 @@ def main():
             other_branch = branch_name
             pull_and_merge(repo_path, main_branch, other_branch)
             create_package_file(folder_path, branch_name)
-            merge_pull_request(pull_request_number)
+            """merge_pull_request(pull_request_number)"""
         else:
             print("Failed to create deployment folder.")
     else:
