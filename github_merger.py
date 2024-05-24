@@ -15,6 +15,7 @@ def create_deployment_folder(branch_name):
         print(f"Failed to create folder: {e}")
         return None
 
+# Merges the pull request locally
 """
 def pull_and_merge(repo_path, main_branch, other_branch):
     try:
