@@ -1,18 +1,21 @@
 import os
 import sys
 import requests
-from git import Repo
+"""from git import Repo"""
 
 def create_deployment_folder(branch_name):
+    """Function creates folder on a constant path."""
     try:
         folder_path = os.path.join("C:/temp/deployment_package", branch_name.replace("/", "_"))
+        normalized_path = os.path.normpath(folder_path)
         os.makedirs(folder_path, exist_ok=True)
-        print(f"Created folder: {folder_path}")
+        print(f"Created folder: {normalized_path}")
         return folder_path
     except OSError as e:
         print(f"Failed to create folder: {e}")
         return None
 
+# Merges the pull request locally
 """
 def pull_and_merge(repo_path, main_branch, other_branch):
     try:
@@ -23,21 +26,23 @@ def pull_and_merge(repo_path, main_branch, other_branch):
         repo.git.checkout(main_branch)
         repo.git.merge(other_branch)
         print(f"Pulled and merged changes from {other_branch} into {main_branch}")
-    except Exception as e:
+    except ImportError as e:
         print(f"Failed to pull and merge changes: {e}")
 """
 
 def create_package_file(folder_path, branch_name):
+    """Function creating package file."""
     try:
         file_path = os.path.join(folder_path, f"{branch_name.replace('/', '_')}.package")
-        with open(file_path, 'w') as package_file:
+        normalized_path = os.path.normpath(file_path)
+        with open(file_path, 'w', encoding="utf-8"):
             pass
-        print(f"Created package file: {file_path}")
+        print(f"Created package file: {normalized_path}")
     except OSError as e:
         print(f"Failed to create package file: {e}")
 
-# Merge pull request using GitHub API
 def merge_pull_request(pull_request_number):
+    """Function merges pull request via github token."""
     github_token = os.getenv("GITHUB_TOKEN")
     if not github_token:
         print("GitHub token not found. Please set the GITHUB_TOKEN environment variable.")
@@ -59,19 +64,19 @@ def merge_pull_request(pull_request_number):
         "merge_method": "merge"
     }
 
-    response = requests.put(url, json=data, headers=headers)
+    response = requests.put(url, json=data, headers=headers, timeout=5)
     if response.status_code == 200:
         print("Pull request merged successfully on GitHub.")
     else:
         print(f"Failed to merge pull request on GitHub. Status code: {response.status_code}")
 
-# get branch name from pull request
 def get_branch_name(pull_request_number):
+    """Function gets the branch name from pull request."""
     github_token = os.getenv("GITHUB_TOKEN")
     if not github_token:
         print("GitHub token not found. Please set the GITHUB_TOKEN environment variable.")
         return None
-    
+
     repo_owner = "OnTomek"  # Update this with your GitHub username or organization name
     repo_name = "test"       # Update this with your repository name
 
@@ -83,18 +88,18 @@ def get_branch_name(pull_request_number):
     url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/pulls/{pull_request_number}"
 
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=5)
         response.raise_for_status()
         data = response.json()
         branch_name = data['head']['ref']
         return branch_name
-    except Exception as e:
+    except ImportError as e:
         print(f"Failed to retrieve pull request information: {e}")
         return None
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python final.py <pull_request_number>")
+        print("Usage: python github_merger.py <pull_request_number>")
         sys.exit(1)
 
     pull_request_number = sys.argv[1]
@@ -102,13 +107,11 @@ def main():
     if branch_name:
         folder_path = create_deployment_folder(branch_name)
         if folder_path:
-            repo_path = "C:/temp/test"  # Path to your local repository
+            """repo_path = "C:/temp/test"  # Path to your local repository
             main_branch = "main"        # Name of your main branch
             other_branch = branch_name
-            """pull_and_merge(repo_path, main_branch, other_branch)"""
+            pull_and_merge(repo_path, main_branch, other_branch)"""
             create_package_file(folder_path, branch_name)
-            
-            # Merge the pull request on GitHub
             merge_pull_request(pull_request_number)
         else:
             print("Failed to create deployment folder.")

@@ -1,7 +1,9 @@
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
+
 # Pull Request Merger
 
 - This [script](github_merger.py) is for merging an additional branch and the master branch with the help of a pull request number and API.
-  First of all it creates a folder on a constant path to a local repository, with the desired branch name of the branch you want to merge with master.
+  First of all it creates a folder on a constant path to a local repository, with the desired branch name of the branch you want to merge with main/master.
   Then in the folder it creates an empty .package file also with the desired branch name and last but not least it merges the two branches together on github.
 
 ## Project Requirements
@@ -17,19 +19,26 @@ pip install requests
 ```
 - Update this with your GitHub username or organization name and repository name.
 ```python
-repo_owner = "OnTomek"
-repo_name = "test"
+repo_owner = "your_username"
+repo_name = "your_repository_name"
 ```
 
-- Update this with the path to your local repository and the name of your main branch.
+- Update this with the path to your local repository and the name of your main/master branch.
 ```python
-repo_path = "C:/temp/test"
+repo_path = "C:/your_local_path"
 main_branch = "main"
 ```
 
 ## How to Use the tool
-- Example of the usage, e.g.  python github_merger.py <pr number>
-
-
-
+- Example input
+```
+$ python github_merger.py
+Usage: python github_merger.py <pull_request_number>
+$ python github_merger.py 10
+```
 - Example output
+```
+Created folder: C:\your_local_path\main
+Created package file: C:\your_local_path\main\main.package
+Pull request merged successfully on GitHub.
+```
