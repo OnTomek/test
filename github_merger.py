@@ -119,6 +119,7 @@ def get_branch_name(pull_request_number):
         return None
 
 def main():
+    """Main function, puts it together."""
     if len(sys.argv) < 2:
         print("Usage: python github_merger.py <pull_request_number>")
         sys.exit(1)
