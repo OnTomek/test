@@ -35,7 +35,7 @@ $ python github_merger.py 10
 ```
 - Example output
 ```
-Created folder: C:\your_local_path\main
+Created folder: C:\your_local_path\feature
 Pulled and merged changes from feature into main
-Created package file: C:\your_local_path\main\main.package
+Created package file: C:\your_local_path\main\feature.package
 ```
