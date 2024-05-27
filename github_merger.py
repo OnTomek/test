@@ -10,19 +10,19 @@ REPO_NAME = "test"
 REPO_PATH = "C:/temp/test"
 MAIN_BRANCH = "main"
 
-@click.command()
+"""@click.command()
 @click.option('--owner', type=str, required=True, help='A string prompt')
 @click.option('--repo', type=str, required=True, help='A string prompt')
 @click.option('--path', type=click.Path(exists=True, path_type=Path), required=True, help='')
 @click.option('--main', type=str, required=True, help='A string prompt')
 
 def validate_inputs(owner, repo, path, main):
-    """Validate and print the inputs."""
+    ""Validate and print the inputs.""
     # Print the inputs
     click.echo(f'Owner: {owner}')
     click.echo(f'Repo: {repo}')
     click.echo(f'Path: {path}')
-    click.echo(f'Main: {main}')
+    click.echo(f'Main: {main}')"""
 
 def create_deployment_folder(branch_name):
     """Function creates folder on a constant path."""
