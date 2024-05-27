@@ -1,8 +1,8 @@
 import os
 import sys
+from pathlib import Path
 import requests
 import click
-from pathlib import Path
 from git import Repo
 
 REPO_OWNER = "OnTomek"
