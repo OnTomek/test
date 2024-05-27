@@ -29,9 +29,9 @@ MAIN_BRANCH = "your_main_branch"
 ## How to Use the tool
 - Example input
 ```
-$ python github_merger.py
-Usage: python github_merger.py <pull_request_number>
-$ python github_merger.py 10
+$ python local_merger.py
+Usage: python local_merger.py <pull_request_number>
+$ python local_merger.py 10
 ```
 - Example output
 ```
