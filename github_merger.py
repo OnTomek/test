@@ -38,6 +38,7 @@ def create_deployment_folder(branch_name):
 
 # Merges the pull request locally
 def pull_and_merge(repo_path, main_branch, other_branch):
+    """Pulls and merges the branches together."""
     try:
         repo = Repo(repo_path)
         origin = repo.remote(name='origin')
