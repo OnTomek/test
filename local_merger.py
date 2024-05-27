@@ -99,9 +99,6 @@ def get_branch_name(pull_request_number):
         print("GitHub token not found. Please set the GITHUB_TOKEN environment variable.")
         return None
 
-    """repo_owner = "OnTomek"  # Update this with your GitHub username or organization name
-    repo_name = "test"      # Update this with your repository name"""
-
     headers = {
         "Authorization": f"token {github_token}",
         "Accept": "application/vnd.github.v3+json"
@@ -122,7 +119,7 @@ def get_branch_name(pull_request_number):
 def main():
     """Main function, puts it together."""
     if len(sys.argv) < 2:
-        print("Usage: python github_merger.py <pull_request_number>")
+        print("Usage: python local_merger.py <pull_request_number>")
         sys.exit(1)
 
     pull_request_number = sys.argv[1]
@@ -130,8 +127,6 @@ def main():
     if branch_name:
         folder_path = create_deployment_folder(branch_name)
         if folder_path:
-            """repo_path = "C:/temp/test"  # Path to your local repository
-            main_branch = "main"        # Name of your main branch"""
             other_branch = branch_name
             pull_and_merge(REPO_PATH, MAIN_BRANCH, other_branch)
             create_package_file(folder_path, branch_name)
