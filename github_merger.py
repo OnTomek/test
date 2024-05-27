@@ -141,4 +141,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # validate_input()
+    """validate_input()"""
