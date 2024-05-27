@@ -36,6 +36,6 @@ $ python github_merger.py 10
 - Example output
 ```
 Created folder: C:\your_local_path\main
-Pulled and merged changes from main into main
+Pulled and merged changes from feature into main
 Created package file: C:\your_local_path\main\main.package
 ```
