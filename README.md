@@ -2,7 +2,7 @@
 
 # Pull Request Merger
 
-- This [script](github_merger.py) is for merging an additional branch and the master branch with the help of a pull request number.
+- This [script](local_merger.py) is for merging an additional branch and the master branch with the help of a pull request number.
   First of all it creates a folder on a constant path to a local repository, with the desired branch name of the branch you want to merge with main/master.
   Then in the folder it creates an empty .package file also with the desired branch name and last but not least it merges the two branches together on github.
 
