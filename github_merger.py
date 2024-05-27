@@ -46,7 +46,7 @@ def pull_and_merge(repo_path, main_branch, other_branch):
         repo.git.checkout(main_branch)
         repo.git.merge(other_branch)
         print(f"Pulled and merged changes from {other_branch} into {main_branch}")
-    except Exception as e:
+    except ImportError as e:
         print(f"Failed to pull and merge changes: {e}")
 
 def create_package_file(folder_path, branch_name):
@@ -114,7 +114,7 @@ def get_branch_name(pull_request_number):
         data = response.json()
         branch_name = data['head']['ref']
         return branch_name
-    except Exception as e:
+    except ImportError as e:
         print(f"Failed to retrieve pull request information: {e}")
         return None
 
