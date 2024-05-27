@@ -17,16 +17,13 @@ def merge_pull_request(pull_request_number):
 ```
 pip install requests
 ```
-- Update this with your GitHub username or organization name and repository name.
-```python
-repo_owner = "your_username"
-repo_name = "your_repository_name"
-```
+- Update this with your GitHub username or organization name, repository name, path to your local repository and the name of your main/master branch.
 
-- Update this with the path to your local repository and the name of your main/master branch.
 ```python
-repo_path = "C:/your_local_path"
-main_branch = "main"
+REPO_OWNER = "your_username"
+REPO_NAME = "your_repository_name"
+REPO_PATH = "C:/your_local_path"
+MAIN_BRANCH = "your_main_branch"
 ```
 
 ## How to Use the tool
