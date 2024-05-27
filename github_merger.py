@@ -1,9 +1,9 @@
 import os
 import sys
-from pathlib import Path
+"""from pathlib import Path"""
 from git import Repo
 import requests
-import click
+"""import click"""
 
 REPO_OWNER = "OnTomek"
 REPO_NAME = "test"
