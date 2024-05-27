@@ -8,7 +8,7 @@
 
 ## Project Requirements
 [requirements](requirements.txt)
-- For this part of code we need to install *requests* git library.
+- For this part of code we need to install *requests* git library and also you will need to set your own github token in an environment.
 ```python
 def merge_pull_request(pull_request_number):
     github_token = os.getenv("GITHUB_TOKEN")
