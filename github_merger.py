@@ -1,9 +1,7 @@
 import os
 import sys
-
 import requests
 import click
-
 from pathlib import Path
 from git import Repo
 
